@@ -19,7 +19,7 @@ func example() (value Value, err error) {
   value,err = funcMightError()
   if err != nil {
     err = fmt.Errorf("%w; %s", ErrCannotDoFunc, err)
-	goto finally
+    goto finally
   }
 
   value,err = anotherFuncMightError()
