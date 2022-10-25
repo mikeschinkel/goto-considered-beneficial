@@ -4,12 +4,6 @@
 
 Programmers have improperly demonized[[2]](#footnotes) using GOTO for decades, and embraced using multiple early returns[[1]](#footnotes) for years. This essay seeks to illustrate **_how source code can be improved_** by using GOTO where most programmers would use early returns,
 
-## Philosphy
-
-The driving idea behind using GOTO is that there should only ever be one return in a function, and it should be on the last line. 
-
-This goes against the 
-
 ## Usage Pattern (show in GoLang)
 
 Here is a contrived error showing the usage pattern:
