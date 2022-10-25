@@ -1,6 +1,6 @@
 
 # GOTO Considered Beneficial
-## _Using GOTO for Better Error Handling in GoLang, PHP, etc._
+## _Using GOTO for better error handling in GoLang, PHP, etc._
 
 Programmers have improperly demonized[[1]](#footnotes) using GOTO for decades, and embraced using multiple early returns[[2]](#footnotes) for years. This essay seeks to illustrate **_how source code can be improved_** by using GOTO where most programmers would use early returns,
 
