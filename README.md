@@ -6,7 +6,7 @@ Programmers have improperly demonized[[1]](#footnotes) using GOTO for decades, a
 
 ## Usage Pattern (shown in GoLang)
 
-Here is a contrived error showing the usage pattern:
+Here is a contrived example showing the usage pattern:
 
 ```golang
 var (
