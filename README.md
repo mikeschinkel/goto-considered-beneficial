@@ -4,7 +4,7 @@
 
 Programmers have improperly demonized[[1]](#footnotes) using GOTO for decades, and embraced using multiple early returns[[2]](#footnotes) for years. This essay seeks to illustrate **_how source code can be improved_** by using GOTO where most programmers would use early returns,
 
-## Usage Pattern (show in GoLang)
+## Usage Pattern (shown in GoLang)
 
 Here is a contrived error showing the usage pattern:
 
