@@ -86,7 +86,7 @@ The longer term benefits are less obvious, but experience reveals them to be eve
 2. When there are many `gotos` it is an _obvious indicator_ a function should be refactored into two or more functions.
 3. When logic dictates you need a 2nd `goto` label it is a _clear indicator_ you need to refactor into another function.
 4. When there are many variables you need to declare at the top, that is a _good indicator_ you need to refactor.
-5. When refactoring, the logic does not need to be _restructured_, unlike when using early returns. 
+5. **When refactoring, the logic does not need to be _restructured_, unlike when using early returns.** 
 
 
 ## Shortcomings
