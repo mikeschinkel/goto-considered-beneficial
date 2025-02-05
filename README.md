@@ -5,7 +5,7 @@
 Programmers have demonized[[1]](#footnotes) using GOTO for decades, and embraced using multiple early returns[[2]](#footnotes) for years. This essay seeks to illustrate **_how source code can be improved_** by using GOTO where most programmers would use early returns,
 
 ## Usage Pattern (shown in GoLang)
-
+ƒ
 Here is a contrived example showing the usage pattern:
 
 ```golang
@@ -19,16 +19,16 @@ func example() (value Value, err error) {
   value,err = funcMightError()
   if err != nil {
     err = fmt.Errorf("%w; %s", ErrCannotDoFunc, err)
-    goto finally
+    goto end
   }
 
   value,err = anotherFuncMightError()
   if err != nil {
     err = fmt.Errorf("%w; %s", ErrCannotDoAnotherFunc, err)
-    goto finally
+    goto end
   }
 
-finally:
+end:
 
   if err != nil {
     err = fmt.Errorf( "unable to do example: %w, err )
@@ -49,16 +49,16 @@ func example() (value Value, err error) {
   value,err = funcMightError()
   if err != nil {
      err = fmt.Errorf( "unable to do example; %w; %s, ErrCannotDoFunc, err.Error() )
-     goto finally
+     goto end
   }
 
   value,err = anotherFuncMightError()
   if err != nil {
      err = fmt.Errof( "unable to do example; %w;  %s, ErrCannotDoAnotherFunc, err.Error() )
-     goto finally
+     goto end
   }
 
-finally:
+end:
 
    return value,err
 }
@@ -73,7 +73,7 @@ And here is another way we might write that same function _(Notice how we do wor
 The immediate obvious benefits are:
 
 1. Supports [_"The Happy_](https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88) [_Path,"_ e.g. left-aligning code](https://maelvls.dev/go-happy-line-of-sight/)
-2. You can still use [guard clauses](https://wiki.c2.com/?GuardClause), but using `goto finally` instead of early `return` statements.
+2. You can still use [guard clauses](https://wiki.c2.com/?GuardClause), but using `goto end` instead of early `return` statements.
 3. Needs only one breakpoint for debugging to ensure a halt of execution before the function returns.
 4. Run shared cleanup code with `goto` _guaranteed_ to run no matter how the exit occurs.
 5. Eliminates having to return many zeroed values when used with multiple return _values_ and exiting on error _(GoLang-specific, not PHP.)_   
@@ -93,7 +93,7 @@ The longer term benefits are less obvious, but experience reveals them to be eve
 
 1. Using `goto`might be _infinitesimally slower_ than an early `return` if you need to use a variable when the early return would not have required it. If every nanosecond matters in your specific executions by all means use early return, but don't [optimize prematurely](https://stackify.com/premature-optimization-evil/).
 
-2. You might need to _explicitly declare variables_ in contexts where you would not have to with early returns. When this occurs, you'll need to do so before your first `goto finally`. OTOH one can argue declaring variables at the function top adds to readability for the future maintenance programmers and is not in-fact a shortcoming.
+2. You might need to _explicitly declare variables_ in contexts where you would not have to with early returns. When this occurs, you'll need to do so before your first `goto end`. OTOH one can argue declaring variables at the function top adds to readability for the future maintenance programmers and is not in-fact a shortcoming.
 
 
 ## Usage in github.com/golang/go
