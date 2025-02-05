@@ -118,6 +118,7 @@ And while the Go source does not use `goto` quite as often as this essay advocat
 
 ## Points of View
 
+- [Goto Considered Helpful](https://blog.blinkenlight.net/goto-considered-helpful/)
 - [What led to "Notes on Structured Programming"](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD13xx/EWD1308.html) by Edsger W. Dijkstra, author of _"The goto statement considered harmful"_, where he states _(**emphasis** mine) "which in later years would be most frequently referenced, **regrettably**, however, often by authors who had seen no more of it than its title"_
 - ["GOTO Considered Harmful" Considered Harmful](https://web.archive.org/web/20090320002214/http://www.ecn.purdue.edu/ParaMount/papers/rubin87goto.pdf) has frank Rubin arguing against the "GOTO Considered Harmful" meme and advocating for GOTO's use for making code less complex.
 - [Structured Programming with GOTO Statements](https://web.archive.org/web/20131023061601/http://cs.sjsu.edu/~mak/CS185C/KnuthStructuredProgrammingGoTo.pdf) by the legendary Donald Knuth advocated for use of GOTO.
