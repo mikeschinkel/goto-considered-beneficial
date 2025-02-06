@@ -48,13 +48,17 @@ func example() (value Value, err error) {
 
   value,err = funcMightError()
   if err != nil {
-     err = fmt.Errorf( "unable to do example; %w; %s, ErrCannotDoFunc, err.Error() )
+     err = errors.Join( err, ErrCannotDoFunc,
+	errors.New("func caused error"),
+     )
      goto end
   }
 
   value,err = anotherFuncMightError()
   if err != nil {
-     err = fmt.Errof( "unable to do example; %w;  %s, ErrCannotDoAnotherFunc, err.Error() )
+     err = errors.Join( err, ErrCannotDoAnotherFunc,
+	errors.New("another func caused error"),
+     )
      goto end
   }
 
